@@ -21,4 +21,9 @@ public class CitiesController {
     public String readAll(){
         return citiesRepository.readAll();
     }
+
+    @PutMapping("cities/{id}")
+    public String update(@PathVariable Integer id, @RequestParam String citiesName){
+        return citiesRepository.update(id, citiesName);
+    }
 }

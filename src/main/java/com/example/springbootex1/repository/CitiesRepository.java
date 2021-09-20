@@ -28,4 +28,13 @@ public class CitiesRepository {
     public String readAll(){
         return this.cities.toString();
     }
+
+    public String update(Integer id, String citiesName){
+        try{
+            this.cities.set(id, citiesName);
+            return "Cities updated";
+        } catch (Exception exception){
+            return "Not found";
+        }
+    }
 }
