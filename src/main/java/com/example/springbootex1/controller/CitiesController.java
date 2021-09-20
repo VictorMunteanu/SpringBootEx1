@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 public class CitiesController {
     CitiesRepository citiesRepository = new CitiesRepository();
 
-    @PostMapping("")
+    @PostMapping("cities")
     public String create(@RequestParam String citiesName){
         return citiesRepository.create(citiesName);
     }
@@ -27,7 +27,7 @@ public class CitiesController {
         return citiesRepository.update(id, citiesName);
     }
 
-    @DeleteMapping("cities")
+    @DeleteMapping("cities/{id}")
     public String delete(@PathVariable Integer id){
         return citiesRepository.delete(id);
     }
