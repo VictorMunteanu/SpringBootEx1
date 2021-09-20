@@ -1,9 +1,7 @@
 package com.example.springbootex1.controller;
 
 import com.example.springbootex1.repository.CitiesRepository;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class CitiesController {
@@ -12,5 +10,15 @@ public class CitiesController {
     @PostMapping("")
     public String create(@RequestParam String citiesName){
         return citiesRepository.create(citiesName);
+    }
+
+    @GetMapping("cities/{id}")
+    public String read(@PathVariable Integer id){
+        return citiesRepository.read(id);
+    }
+
+    @GetMapping("cities")
+    public String readAll(){
+        return citiesRepository.readAll();
     }
 }
