@@ -26,4 +26,9 @@ public class CitiesController {
     public String update(@PathVariable Integer id, @RequestParam String citiesName){
         return citiesRepository.update(id, citiesName);
     }
+
+    @DeleteMapping("cities")
+    public String delete(@PathVariable Integer id){
+        return citiesRepository.delete(id);
+    }
 }

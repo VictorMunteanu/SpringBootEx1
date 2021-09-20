@@ -37,4 +37,13 @@ public class CitiesRepository {
             return "Not found";
         }
     }
+
+    public String delete(Integer id){
+        try{
+            this.cities.remove(this.cities.get(id));
+            return "Delete Cities";
+        } catch (Exception exception){
+            return "Not found";
+        }
+    }
 }
