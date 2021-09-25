@@ -8,8 +8,8 @@ public class CityController {
     CitiesRepository citiesRepository = new CitiesRepository();
 
     @PostMapping("cities")
-    public String create(@RequestParam String cityName, @RequestParam Integer countryId){
-        return citiesRepository.create(cityName, countryId);
+    public String create(@RequestParam String cityName, @RequestParam Integer countryId, @RequestParam String countryName) {
+        return citiesRepository.create(cityName, countryId, countryName);
     }
 
     @GetMapping("cities/{id}")
@@ -23,8 +23,8 @@ public class CityController {
     }
 
     @PutMapping("cities/{id}")
-    public String update(@PathVariable Integer id, @RequestParam String cityName){
-        return citiesRepository.update(id, cityName);
+    public String update(@PathVariable Integer id, @RequestParam String cityName, @RequestParam String countryName){
+        return citiesRepository.update(id, cityName, countryName);
     }
 
     @DeleteMapping("cities/{id}")
